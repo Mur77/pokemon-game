@@ -1,6 +1,6 @@
 import s from './Layout.module.css';
 
-export const Layout = ({ title, descr, urlBg = null, colorBg = null }) => {
+export const Layout = ({ title, descr, urlBg = null, colorBg = null, children }) => {
     const inlineStyle = {};
     if (urlBg) {
         inlineStyle.backgroundImage = `url(${urlBg})`
@@ -18,6 +18,7 @@ export const Layout = ({ title, descr, urlBg = null, colorBg = null }) => {
                         <span className={s.separator}></span>
                     </div>
                     <div className={s.desc + ' ' + s.full}>
+                        { children }
                         <p>{ descr }</p>
                     </div>
                 </article>
